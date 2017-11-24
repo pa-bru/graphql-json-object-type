@@ -1,7 +1,7 @@
 {
   "name": "graphql-json-object-type",
   "version": "1.0.0",
-  "description": "A Json Object scalar type for Graph.js. It enables you to pass object inputs to your mutation or queries.",
+  "description": "A Json Object scalar type for Graphql.js. It enables you to pass object inputs to your mutation or queries.",
   "main": "dist/index.js",
   "files": [
     "dist"

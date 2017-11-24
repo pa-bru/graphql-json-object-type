@@ -1,0 +1,39 @@
+{
+  "name": "graphql-json-object-type",
+  "version": "1.0.0",
+  "description": "A Json Object scalar type for Graph.js. It enables you to pass object inputs to your mutation or queries.",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepublish": "npm run build",
+    "test": "./node_modules/.bin/jest src",
+    "lint": "./node_modules/.bin/eslint src",
+    "clean": "rm -rf dist && mkdir dist",
+    "build": "npm run clean && ./node_modules/.bin/babel src --out-dir dist --ignore '**/*.test.js'"
+  },
+  "keywords": [
+    "graphql",
+    "json"
+  ],
+  "author": "Paul-Adrien Bru",
+  "license": "MIT",
+  "peerDependencies": {
+    "graphql": ">=0.4.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-jest": "^21.2.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.11.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "graphql": "^0.11.7",
+    "jest": "^21.2.1"
+  }
+}

@@ -1,0 +1,33 @@
+# Documentation is inspired by
+# http://blog.tgrrtt.com/exploring-the-travisci-configuration-file
+# and https://docs.travis-ci.com/user/customizing-the-build/
+
+# Ensure we are in a container-based ci environment (faster boot time)
+sudo: false
+
+# We want to be as close to the production because sometimes dependencies behave differently with
+# NODE_ENV other than production
+env:
+  global:
+    - NODE_ENV=production
+    - GLOBAL_DATE=$(date +%Y-%m-%d)
+
+# https://docs.travis-ci.com/user/languages/javascript-with-nodejs/
+language: node_js
+
+node_js:
+  - '8'
+
+# https://docs.travis-ci.com/user/caching
+# https://blog.travis-ci.com/2016-11-21-travis-ci-now-supports-yarn
+cache: yarn
+
+# The install block is used to set up the dependencies of your build. It's where things like npm
+# install get run.
+install:
+  - yarn --no-progress --prefer-offline --check-files --production=false
+
+# This is the step where Travis runs your test script. Unless otherwise specified, it runs the
+# default for the set language. In the case of node, it does npm test.
+script:
+  - yarn run lint && yarn test

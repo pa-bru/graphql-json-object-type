@@ -1,26 +1,31 @@
 {
   "name": "graphql-json-object-type",
   "version": "1.0.0",
-  "description": "A Json Object scalar type for Graphql.js. It enables you to pass object inputs to your mutation or queries.",
+  "description":
+    "A Json Object scalar type for Graphql.js. It enables you to pass object inputs to your mutation or queries.",
   "main": "dist/index.js",
-  "files": [
-    "dist"
-  ],
-  "scripts": {
-    "prepublish": "npm run build",
-    "test": "./node_modules/.bin/jest src",
-    "lint": "./node_modules/.bin/eslint src",
-    "clean": "rm -rf dist && mkdir dist",
-    "build": "npm run clean && ./node_modules/.bin/babel src --out-dir dist --ignore '**/*.test.js'"
+  "files": ["dist"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pa-bru/graphql-json-object-type.git"
   },
-  "keywords": [
-    "graphql",
-    "json"
-  ],
+  "bugs": {
+    "url": "https://github.com/pa-bru/graphql-json-object-type/issues"
+  },
+  "homepage": "https://github.com/pa-bru/graphql-json-object-type",
+  "keywords": ["graphql", "json"],
   "author": "Paul-Adrien Bru",
   "license": "MIT",
   "peerDependencies": {
     "graphql": ">=0.4.0"
+  },
+  "scripts": {
+    "prepare": "npm run build",
+    "test": "./node_modules/.bin/jest src",
+    "lint": "./node_modules/.bin/eslint src",
+    "clean": "rm -rf dist && mkdir dist",
+    "build":
+      "npm run clean && ./node_modules/.bin/babel src --out-dir dist --ignore '**/*.test.js'"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

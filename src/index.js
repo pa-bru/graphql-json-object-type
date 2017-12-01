@@ -2,7 +2,7 @@ import { GraphQLScalarType } from 'graphql'
 import { Kind } from 'graphql/language'
 
 function getObject (value) {
-  return typeof value === 'object' ? value : null
+  return value && !Array.isArray(value) && typeof value === 'object' ? value : null
 }
 
 function parseObject (ast) {
